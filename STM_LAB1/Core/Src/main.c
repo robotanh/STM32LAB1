@@ -92,15 +92,82 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int counter =0;
+  int counterSec =0;
+  int counterMin =0;
+  int counterHour =0;
+
+  int ledSec = 0;
+  int ledMin =0;
+  int ledHour =0;
+  clearAllClock();
+  setNumberOnClock(0);
+
   while (1)
   {
     /* USER CODE END WHILE */
-	  clearAllClock();
-	  setNumberOnClock(counter);
-	  if(counter == 12)counter =0;
-	  counter++;
-	  HAL_Delay(1000);
+	  if(counterSec ==60)
+	  {
+			if(counterSec /5 -1 != ledMin && counterSec /5 -1 != ledHour)
+			{
+				clearNumberOnClock(counterSec /5 -1 );
+			}
+			setNumberOnClock(0);
+		  counterSec=0;
+		  ledSec =0;
+		  counterMin++;
+		  if(counterMin ==60)  //Min run
+		  {
+			  if(counterMin/5-1 != ledSec && counterMin/5 -1 != ledHour)
+			  {
+				  clearNumberOnClock(counterMin/5-1);
+			  }
+			  setNumberOnClock(0);
+			  counterMin =0;
+			  ledMin =0;
+			  counterHour++;
+			  if(counterHour ==12)
+			  {
+				  clearAllClock();
+				  setNumberOnClock(0);
+				  counterSec =0;
+				  counterMin =0;
+				  counterHour =0;
+
+				  ledSec = 0;
+				  ledMin =0;
+				  ledHour =0;
+
+			  }
+			  else if(counterHour -1 != ledSec && counterHour-1 != ledMin)
+			  {
+				  clearNumberOnClock(counterHour-1);
+			  }
+			  setNumberOnClock(counterHour);
+			  ledHour = counterHour;
+		  }
+		  else if(counterMin%5 ==0)
+		  {
+			  if(counterMin/5-1 != ledSec && counterMin/5 -1 != ledHour)
+			  {
+				  clearNumberOnClock(counterMin/5-1);
+			  }
+			  setNumberOnClock(counterMin /5 );
+			  ledMin = counterMin/5;
+		  }
+	  }
+	  else if (counterSec % 5 ==0) //sec run
+	  {
+
+		if(counterSec /5 -1 != ledMin && counterSec /5 -1 != ledHour)
+		{
+			clearNumberOnClock(counterSec /5 -1);
+		}
+		setNumberOnClock(counterSec/5);
+		ledSec= counterSec/5;
+	  }
+
+	  HAL_Delay(1);
+	  counterSec++;
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

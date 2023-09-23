@@ -72,6 +72,7 @@ void setNumberOnClock(int counter)
 		default:
 			break;
 	}
+}
 void clearNumberOnClock (int counter)
 {
 	switch(counter){
@@ -115,6 +116,4 @@ void clearNumberOnClock (int counter)
 		break;
 
 	}
-}
-
 }
