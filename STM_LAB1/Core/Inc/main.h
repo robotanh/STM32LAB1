@@ -84,6 +84,20 @@ void Error_Handler(void);
 #define LedsegB_GPIO_Port GPIOA
 #define LedsegA_Pin GPIO_PIN_13
 #define LedsegA_GPIO_Port GPIOA
+#define LedsegG7_Pin GPIO_PIN_14
+#define LedsegG7_GPIO_Port GPIOA
+#define LedsegF6_Pin GPIO_PIN_15
+#define LedsegF6_GPIO_Port GPIOA
+#define LedsegE5_Pin GPIO_PIN_3
+#define LedsegE5_GPIO_Port GPIOB
+#define LedsegD4_Pin GPIO_PIN_4
+#define LedsegD4_GPIO_Port GPIOB
+#define LedsegCba_Pin GPIO_PIN_5
+#define LedsegCba_GPIO_Port GPIOB
+#define LedsegB2_Pin GPIO_PIN_6
+#define LedsegB2_GPIO_Port GPIOB
+#define LedsegA1_Pin GPIO_PIN_7
+#define LedsegA1_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
