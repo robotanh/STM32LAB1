@@ -97,7 +97,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  clearAllClock();
-	  setClock(counter);
+	  setNumberOnClock(counter);
 	  if(counter == 12)counter =0;
 	  counter++;
 	  HAL_Delay(1000);
