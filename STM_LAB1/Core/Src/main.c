@@ -113,7 +113,7 @@ int main(void)
  	    	 		  HAL_GPIO_WritePin(GPIOA, LED_REDA4_Pin, 1);
  	    	 		  HAL_GPIO_WritePin(GPIOA, LED_GREENA6_Pin, 0);
  	    	 		  HAL_GPIO_WritePin(GPIOA, LED_YELLOWA5_Pin, 1);
- 	    	 		  //display7seg(1, counter-max/2-2);
+ 	    	 		  display7seg(1, counter-max/2-2);
  	    	 		 //display7seg(1, counter);
  	    	 	  }
  	    	 	  else if(counter == max -3 || ( counter <max -3&& counter > max/2))
@@ -121,7 +121,7 @@ int main(void)
  	    	 		  HAL_GPIO_WritePin(GPIOA, LED_REDA4_Pin, 1);
  	    	 		  HAL_GPIO_WritePin(GPIOA, LED_GREENA6_Pin, 1);
  	    	 		  HAL_GPIO_WritePin(GPIOA, LED_YELLOWA5_Pin, 0);
- 	    	 		  //display7seg(1, counter-max/2);
+ 	    	 		  display7seg(1, counter-max/2);
  	    	 	  }
  	    	  }
  	    	  if(counter <=max/2)
@@ -129,7 +129,7 @@ int main(void)
  	    		  HAL_GPIO_WritePin(GPIOA, LED_REDA4_Pin, 0);
  	    		  HAL_GPIO_WritePin(GPIOA, LED_GREENA6_Pin, 1);
  	    		  HAL_GPIO_WritePin(GPIOA, LED_YELLOWA5_Pin, 1);
- 	    	 	  //display7seg(1, counter);
+ 	    	 	  display7seg(1, counter);
 
  	    		  if(counter == max/2 || (counter <max/2 && counter >(max/2)-3))
  	    		  {
@@ -148,7 +148,7 @@ int main(void)
  	    	  }
 
  	    	  counter--;
- 	    	  display7seg(1, counter);
+ 	    	  //display7seg(1, counter);
  	    	  HAL_Delay(1000);
 
      /* USER CODE BEGIN 3 */
