@@ -92,9 +92,51 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int counter=0;
   while (1)
   {
     /* USER CODE END WHILE */
+	  if(counter == 10) counter =0;
+	  display7SEG(1, counter);
+	    	  if(counter <5)
+	    	  {
+	    	 	  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin, 0);
+	    	 	  HAL_GPIO_WritePin(GPIOA, LED_GREEN_Pin, 1);
+	    	 	  HAL_GPIO_WritePin(GPIOA, LED_YELLOW_Pin, 1);
+	    	 	  if(counter == 0)
+	    	 	  {
+	    	 		  HAL_GPIO_WritePin(GPIOA, LED_REDA4_Pin, 1);
+	    	 		  HAL_GPIO_WritePin(GPIOA, LED_GREENA6_Pin, 0);
+	    	 		  HAL_GPIO_WritePin(GPIOA, LED_YELLOWA5_Pin, 1);
+	    	 	  }
+	    	 	  else if(counter == 3)
+	    	 	  {
+	    	 		  HAL_GPIO_WritePin(GPIOA, LED_REDA4_Pin, 1);
+	    	 		  HAL_GPIO_WritePin(GPIOA, LED_GREENA6_Pin, 1);
+	    	 		  HAL_GPIO_WritePin(GPIOA, LED_YELLOWA5_Pin, 0);
+	    	 	  }
+	    	  }
+	    	  if(counter >=5)
+	    	  {
+	    		  HAL_GPIO_WritePin(GPIOA, LED_REDA4_Pin, 0);
+	    		  HAL_GPIO_WritePin(GPIOA, LED_GREENA6_Pin, 1);
+	    		  HAL_GPIO_WritePin(GPIOA, LED_YELLOWA5_Pin, 1);
+	    		  if(counter == 5)
+	    		  {
+	    	  	 	  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin, 1);
+	    	  	 	  HAL_GPIO_WritePin(GPIOA, LED_GREEN_Pin, 0);
+	    	  	 	  HAL_GPIO_WritePin(GPIOA, LED_YELLOW_Pin, 1);
+	    		  }
+	    		  else if (counter == 8)
+	    		  {
+	    	  	 	  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin, 1);
+	    	  	 	  HAL_GPIO_WritePin(GPIOA, LED_GREEN_Pin, 1);
+	    	  	 	  HAL_GPIO_WritePin(GPIOA, LED_YELLOW_Pin, 0);
+	    		  }
+	    	  }
+	    	  counter++;
+
+	    	  HAL_Delay(1000);
 
     /* USER CODE BEGIN 3 */
   }
